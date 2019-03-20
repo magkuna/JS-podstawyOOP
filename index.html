@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+function removeLeg() {
+    this.legs = this.legs -1
+    if (this.legs <0) this.legs = 0
+}
+
+function removeLegs(numberofLegs) {
+    this.legs = this.legs - numberofLegs
+    if (this.legs <0) this.legs = 0
+}
+
+const chair1 = {
+    legs: 4,
+    removeLeg: removeLeg,
+    removeLegs: removeLegs,
+}
+
+    chair1.removeLeg();
+    chair1.removeLeg();
+
+    chair1.removeLegs(3)
+
+    console.log(chair1)
+  
+        
+        
+    
+        
+    </script>
+</body>
+</html>
