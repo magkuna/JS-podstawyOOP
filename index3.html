@@ -8,15 +8,17 @@
 </head>
 <body>
     <script>
-        const car = {
-            fuelTank: 100,
+        const makeCar = function (fuelTank){
+            return {
+                fuelTank:fuelTank
+            }
         }
         const cars = []
 
-        for ( i=0; i<100; i++){
-       cars.push({
-           fuelTank:100 - i
-       })
+        for ( let i=0; i<100; i++){
+            const car = makeCar (100-i)
+       
+            cars.push(car)
         }
         console.log(cars)
         
