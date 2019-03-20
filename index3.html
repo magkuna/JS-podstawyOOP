@@ -8,9 +8,14 @@
 </head>
 <body>
     <script>
+        const move = function (combustion){
+            this.fuelTank = this.fuelTank - combustion
+        }
+
         const makeCar = function (fuelTank){
             return {
-                fuelTank:fuelTank
+                fuelTank:fuelTank,
+                move:move,
             }
         }
         const cars = []
