@@ -29,6 +29,7 @@
             const input = document.createElement('input')
             const button = document.createElement ('button')
             const p = document.createElement('p')
+            const arrayContainer = this.renderNumbersArray()
 
             input.setAttribute('type', 'number')
             input.value = this.inputValue
@@ -44,10 +45,42 @@
                 'click',
                 () => this.push(this.inputValue)
             )
+            
+
             this.container.appendChild(input)
             this.container.appendChild(button)
+            this.container.appendChild(arrayContainer)
             this.container.appendChild(p)
 
+        }
+        
+        ArrayPusher.prototype.renderNumbersArray = function(){
+            const arrayContainer = document.createElement ('div')
+            this.array.forEach(
+                (number, index) => {
+                    const div = document.createElement('div')
+                    const button = document.createElement('button')
+                    div.innerText = number
+                    button.innerText="Usuń"
+
+                    button.addEventListener(
+                        'click',
+                        () =>this.remove(index)
+                    )
+
+
+                   arrayContainer.appendChild(button)
+                   arrayContainer.appendChild(div)
+                   
+                }
+            )
+            return arrayContainer
+        }
+        ArrayPusher.prototype.remove = function (removedElementIndex){
+            this.array = this.array.filter(
+                (el,index) => index !== removedElementIndex
+            )
+            this.render()
         }
 
         ArrayPusher.prototype.push = function (newValue) {
