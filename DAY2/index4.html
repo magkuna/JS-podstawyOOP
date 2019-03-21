@@ -13,21 +13,32 @@
 
         function ArrayPusher() {
             this.array = []
-            
+
         }
 
-        ArrayPusher.prototype.push = function (newValue){ 
-        this.array = this.array.concat(newValue)
+        ArrayPusher.prototype.push = function (newValue) {
+            this.array = this.array.concat(newValue)
         }
-        const pusher1 = new ArrayPusher () 
+
+        ArrayPusher.prototype.sum = function () {
+            let sum = 0
+            for (let i = 0; i < this.array.length; i++) {
+                sum = sum + this.array[i]
+            }
+            return sum
+        }
+
+        ArrayPusher.prototype.average = function (){
+           return this.sum() / this.array.length
+        }
+
+        const pusher1 = new ArrayPusher()
         pusher1.push(1)
         pusher1.push(4)
         pusher1.push(5)
-       
-        
-        console.log(pusher1)
 
-
+        pusher1.sum()
+        pusher1.average()
 
 
     </script>
