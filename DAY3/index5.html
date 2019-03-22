@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Animal {
+            constructor(legs, sound, ) {
+                this.legs = legs
+                this.sound = sound
+
+            }
+            makeSound() {
+                console.log(this.sound)
+            }
+            sayHello() {
+                if (this.name) {
+                    console.log(' Hello, I am' + ' ' + this.name)
+                } else {
+                    console.log('I have no name!')
+                }
+            }
+        }
+const animal1 = new Animal (8, 'Wrrr')
+
+
+        class Dog extends Animal {
+            constructor(name) {
+                super(4, 'Woff')
+                this.name = name
+            }
+        }
+        class Cat extends Animal {
+            constructor(name) {
+                super(4, "Miau")
+                this.name = name
+
+            }
+        }
+
+
+        const dog1 = new Dog('Puszek')
+        const cat1 = new Cat('Kłębuszek')
+    </script>
+</body>
+
+</html>
