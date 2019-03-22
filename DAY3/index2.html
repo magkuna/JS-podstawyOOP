@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function Circle() {
+            this.element = document.createElement('div')
+
+            this.element.style.borderRadius = '50%'
+            this.element.style.height = '30px'
+            this.element.style.width = '30px'
+            this.element.style.backgroundColor = 'green'
+
+            this.element.addEventListener(
+                'click',
+                () => this.toggleColor()
+            )
+
+            document.body.appendChild(this.element)
+        }
+
+        Circle.prototype.toggleColor = function (){
+            if (this.element.style.backgroundColor === 'yellow'){
+                this.changeColor ('green')
+            }else {
+                this.changeColor ('yellow')
+            }
+        }
+
+        Circle.prototype.changeColor = function (color) {
+            this.element.style.background = color
+        }
+
+        const circle1 = new Circle()
+        circle1.changeColor('green')
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
